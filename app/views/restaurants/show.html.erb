@@ -1,7 +1,22 @@
-<%= @restaurant.name %>
+<%= link_to "View All Restaurants", restaurants_path %> /
+<%= link_to "Create New Restaurant", restaurant_path('new') %>
+<br>
+
+<h2><%= @restaurant.name %></h2>
+Address:
 <%= @restaurant.address %>, <%= @restaurant.state %> <%= @restaurant.zip_code %>
-<%= @restaurant.category %>
+<br>
+Cuisine Type:
+<% if !@restaurant.category.nil? %>
+  <%= @restaurant.category.name %>
+<% end %>
+<br>
+Description:
 <%= @restaurant.description %>
+<br>
+<br>
+<h3>Reviews:</h3>
+<br>
 
 <% @reviews.each do |r| %>
   <%= r.rating %>

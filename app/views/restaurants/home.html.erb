@@ -1,3 +1,11 @@
+<h2>Welcome to Good Eats</h2>
+
+<%= link_to "View All Restaurants", restaurants_path %> /
+
+<%= link_to "Create New Restaurant", restaurant_path('new') %>
+
+<br>
+
 <ul>
   <% @restaurants.each do |r| %>
     <li>
