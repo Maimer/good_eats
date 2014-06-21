@@ -16,10 +16,13 @@ Description:
 <br>
 <br>
 <h3>Reviews:</h3>
-<br>
 
+<%= link_to "Create New Review", new_restaurant_review_path(@restaurant.id) %>
+<br>
+<br>
 <% @reviews.each do |r| %>
-  <%= r.rating %>
-  <%= r.description %>
-  <%= r.created_at %>
+  Rating (1-5): <%= r.rating %> <br>
+  Description: <%= r.description %> <br>
+  Created <%= r.created_at.strftime("at %I:%M%p") %>
+  <br><br>
 <% end %>

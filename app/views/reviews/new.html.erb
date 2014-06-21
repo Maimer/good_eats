@@ -1,0 +1,15 @@
+<h2>Add a Review for <%= @restaurant.name %></h2>
+
+<%= form_for [@restaurant, @review] do |r| %>
+  Rating:
+  <% 5.times do |i| %>
+    <%= r.label(:rating, "#{i+1}") %>
+    <%= r.radio_button(:rating, "#{i+1}") %>
+  <% end %>
+  <br>
+
+  <%= r.label :description %>:
+  <%= r.text_area :description %><br>
+
+  <%= r.submit %>
+<% end %>
