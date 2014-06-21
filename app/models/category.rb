@@ -1,6 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :categorizations
-  has_many :restaurants, through: :categorizations
+  has_many :restaurants
 
   validates :name, uniqueness: true
 end

@@ -1,7 +1,6 @@
 class Restaurant < ActiveRecord::Base
   has_many :reviews
-  has_many :categorizations
-  has_many :categories, through: :categorizations
+  belongs_to :category
 
   validates :name, presence: true
   validates :address, presence: true
