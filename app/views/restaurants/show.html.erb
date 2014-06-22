@@ -21,7 +21,7 @@ Description:
 <br>
 <br>
 <% @reviews.each do |r| %>
-  Rating (1-5): <% r.rating.to_i.times do %>&#9733; <% end %><br>
+  Rating: <% r.rating.to_i.times do %>&#9733; <% end %><br>
   Description: <%= r.description %> <br>
   Created <%= r.created_at.strftime("at %I:%M%p") %>
   <br><br>

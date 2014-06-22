@@ -4,12 +4,12 @@ class RestaurantsController < ApplicationController
   end
 
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.all.order("name")
   end
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    @reviews = @restaurant.reviews.all.order('created_at desc')
+    @reviews = @restaurant.reviews.all.order("created_at desc")
   end
 
   def new
