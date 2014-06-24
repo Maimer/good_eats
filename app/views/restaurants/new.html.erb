@@ -1,0 +1,25 @@
+<h2>Add a Restaurant</h2>
+
+<%= form_for @restaurant do |r| %>
+  <%= r.label :name %>:
+  <%= r.text_field :name %><br>
+
+  <%= r.label :address %>:
+  <%= r.text_field :address %>
+
+  <%= r.label :state %>:
+  <%= r.text_field :state, size: 2, maxlength: 2 %>
+
+  <%= r.label :zip_code %>:
+  <%= r.text_field :zip_code, size: 5, maxlength: 5 %><br>
+
+  <%= r.label :category %>:
+  <%= r.collection_select :category_id, @categories, :id, :name, include_blank: true %><br>
+
+  <%= r.label :description %>:
+  <%= r.text_area :description, col: 40, rows: 5 %><br>
+
+  <%= r.submit %>
+<% end %>
+
+
